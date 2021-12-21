@@ -29,7 +29,6 @@ import com.todoapp.service.RefreshTokenService;
 
 @RestController
 @RequestMapping("/api/auth")
-@CrossOrigin(origins="http://localhost:3000")
 public class AuthController {
 
 	@Autowired

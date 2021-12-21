@@ -1,6 +1,4 @@
-FROM maven:latest
-RUN mkdir /todoapp
-WORKDIR /todoapp
-COPY . .
-EXPOSE 8080
-CMD ["mvn", "springboot:run"]
+FROM openjdk:11
+ADD target/todoapp.jar todoapp.jar
+EXPOSE 8088
+ENTRYPOINT ["java", "-jar", "/todoapp.jar"]
