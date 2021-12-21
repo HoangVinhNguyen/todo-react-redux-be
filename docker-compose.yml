@@ -2,7 +2,7 @@ version: "3"
 
 services:
   mysql:
-   image: mysql:8.0.25
+   image: mysql:latest
    environment:
     - MYSQL_DATABASE=tododb
     - MYSQL_ROOT_USER=root
@@ -16,7 +16,7 @@ services:
     image: todoapp-springboot:latest
     environment:
       SPRING_APPLICATION_JSON: '{
-        "spring.datasource.url"  : "jdbc:mysql://localhost:3306/tododb?useSSL=false",
+        "spring.datasource.url"  : "jdbc:mysql://mysql:3306/tododb?useSSL=false",
         "spring.datasource.username" : "root",
         "spring.datasource.password" : "root",
         "spring.jpa.properties.hibernate.dialect" : "org.hibernate.dialect.MySQL8Dialect",
